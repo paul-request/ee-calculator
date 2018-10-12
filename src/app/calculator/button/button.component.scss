@@ -1,0 +1,45 @@
+@import 'settings';
+
+:host {
+  display: flex;
+  flex: 0 1 25%;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+  border: 1px solid $midLightGrey;
+
+  &:nth-child(4n + 1) {
+    border-left: 0;
+  }
+
+  &:nth-child(4n) {
+    border-right: 0;
+  }
+}
+
+.button {
+  flex: 0 1 100%;
+  appearance: none;
+  height: 50px;
+  background-color: $primaryBlue;
+  color: $primaryWhite;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $primaryBlue;
+  padding: 5px;
+
+  &:focus {
+    outline: 0;
+    border-color: $primaryYellow;
+  }
+
+  &-action {
+    background-color: $secondaryYellow;
+    border-color: $secondaryYellow;
+  }
+
+  &-operator {
+    background-color: $secondaryBlue;
+    border-color: $secondaryBlue;
+  }
+}

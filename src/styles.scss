@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ee-styleguide/src/scss/normalise';
+@import '~ee-styleguide/src/scss/variables';
+@import 'typography';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+  font-family: $primaryFont;
+  font-weight: $regular;
+  color: $fontGrey;
+  background-color: $bgGrey;
+}
+
+.access {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  left: -1000ex;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

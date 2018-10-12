@@ -1,0 +1,11 @@
+<button
+  [ngClass]="{
+    'button-wide': !!wide,
+    'button-action': isAction(),
+    'button-operator': isOperator()
+  }"
+  class="button"
+  type="button"
+  (click)="handleClick()">
+  {{display || value}}
+</button>

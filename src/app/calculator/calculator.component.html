@@ -1,0 +1,36 @@
+<div class="calculator">
+  <h1 class="calculator-header">
+    <img class="calculator-header-logo" src="assets/img/ee-logo.png" alt="Equal Experts" />
+    <span class="access">Calculator</span>
+  </h1>
+
+  <app-display [calculator]="calculatorService.calculator | async"></app-display>
+
+  <div class="calculator-pad">
+    <app-button value="C" type="action"></app-button>
+  </div>
+
+  <div class="calculator-pad">
+    <app-button value="7" type="number"></app-button>
+    <app-button value="8" type="number"></app-button>
+    <app-button value="9" type="number"></app-button>
+    <app-button value="/" type="operator" display="&divide;" name="divide"></app-button>
+
+    <app-button value="4" type="number"></app-button>
+    <app-button value="5" type="number"></app-button>
+    <app-button value="6" type="number"></app-button>
+    <app-button value="*" type="operator" display="&times;" name="multiply"></app-button>
+
+
+    <app-button value="1" type="number"></app-button>
+    <app-button value="2" type="number"></app-button>
+    <app-button value="3" type="number"></app-button>
+    <app-button value="-" type="operator" name="subtract"></app-button>
+
+
+    <app-button value="0" type="number"></app-button>
+    <app-button value="." type="number"></app-button>
+    <app-button value="=" type="action" name="equals"></app-button>
+    <app-button value="+" type="operator" name="add"></app-button>
+  </div>
+</div>

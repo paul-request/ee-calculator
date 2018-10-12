@@ -1,0 +1,28 @@
+@import 'settings';
+
+.calculator {
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 6px;
+  background-color: $primaryWhite;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+
+  .calculator-header {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+
+    .calculator-header-logo {
+      height: 50px;
+    }
+  }
+
+  .calculator-pad {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 100%;
+    background-color: $midLightGrey;
+  }
+}
