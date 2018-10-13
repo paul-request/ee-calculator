@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 export interface CalculatorConfig {
   displayValue: string;
@@ -28,11 +28,11 @@ export class CalculatorService {
 
   constructor() { }
 
-  get calculator() {
+  get calculator(): Observable<CalculatorConfig> {
     return this._calculator.asObservable();
   }
 
-  nextCalculator(value: string): CalculatorConfig {
+  getCalulatorValue(value: string): CalculatorConfig {
     const isNumber = !isNaN(parseInt(value, 10));
     const isOperator = !!Object.keys(this.operations).filter((op) => op === value).length;
     const { displayValue, operator, prevValue, pendingOperator } = this._calculator.getValue();
@@ -81,7 +81,7 @@ export class CalculatorService {
       if (!prevValue) {
         return {
           ...this._calculator.getValue(),
-          prevValue: `${!prevValue ? displayValue : prevValue}`,
+          prevValue: `${displayValue}`,
           pendingOperator: true,
           operator: `${value}`
         };
@@ -99,13 +99,13 @@ export class CalculatorService {
           operator: value
         };
       }
-
-      return this._calculator.getValue();
     }
+
+    return this._calculator.getValue();
   }
 
   execute(nextValue: string) {
-    const calculatorConfig = this.nextCalculator(nextValue);
+    const calculatorConfig = this.getCalulatorValue(nextValue);
 
     this._calculator.next(calculatorConfig);
   }

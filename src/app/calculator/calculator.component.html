@@ -4,7 +4,9 @@
     <span class="access">Calculator</span>
   </h1>
 
-  <app-display [calculator]="calculatorService.calculator | async"></app-display>
+  <div class="calculator-display">
+    {{(calculatorService.calculator | async)?.displayValue | number:'1.0-10'}}
+  </div>
 
   <div class="calculator-pad">
     <app-button value="C" type="action"></app-button>

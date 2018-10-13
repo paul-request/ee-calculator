@@ -88,7 +88,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/assets/styles",
+                "../node_modules"
+              ]
+            }
           }
         },
         "lint": {
